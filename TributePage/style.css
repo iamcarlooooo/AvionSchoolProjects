@@ -1,0 +1,80 @@
+* {
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+}
+
+body {
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url(https://w0.peakpx.com/wallpaper/887/537/HD-wallpaper-los-angeles-lakers-logo-in-purple-paint-background-lakers.jpg);
+}
+
+#img-div img {
+    border-radius: 50%;
+    max-width: 55%;
+}
+h1 {
+    font-size: 100px;
+    margin: 0px;
+    color: black;
+}
+
+h3 {
+    margin: 0px;
+    font-size: 40px;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+/* no indentation for lists */
+}
+
+
+#article img {
+    max-width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#img-div{
+    text-align: center;
+}
+
+#tribute-info {
+    text-align: center;
+    font-size: 25px;
+}
+
+#main {
+    margin: 0px;
+}
+
+#tribute-link {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+}
+
+#article {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    background: rgba(90, 0, 90, 0.808);
+    padding: 5%;
+}
+
+#article p {
+    text-align: justify;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#article h3{
+    color: white;
+}
+

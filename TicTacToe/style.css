@@ -1,0 +1,21 @@
+#board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr  1fr;
+    max-width: 40%;
+    height: 40vw;
+    margin: auto;
+    border: 2px solid black;
+    text-align: center;
+  
+}
+
+.square {
+    background-color: aliceblue;
+    border: 1px solid black;
+    
+}
+
+* {
+    font-size: 2.5rem;
+}

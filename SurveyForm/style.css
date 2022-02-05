@@ -1,0 +1,63 @@
+* {
+    font-family: 'Rowdies', cursive;
+    color: white;
+}
+
+
+body {
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/h9EEKxRwhMauUUtKKfy6Ze.jpg);
+}
+
+select {
+    width: 100%;
+    padding: 1%;
+    color: black;
+}
+
+select option {
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    height: 20%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    color: black;
+    padding: 2%;
+}
+
+.questions {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#main {
+    width: 50%;
+    margin: auto;
+    padding: 5%;
+    background-color: rgba(29, 124, 124, 0.7);
+}
+
+#name, #email, #number {
+    width: 100%;
+    padding: 1%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#submit {
+    width: 100%;
+    background-color: rgb(21, 85, 85);
+    padding: 3%;
+    font-size: large;
+}
+
+#submit:hover {
+    background-color: rgb(68, 119, 119);
+}
+
+
+

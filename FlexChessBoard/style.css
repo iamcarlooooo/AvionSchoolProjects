@@ -1,0 +1,29 @@
+#chessboard {
+    max-width: 40vw;
+    height: 40vw;
+    border: 1vw black solid;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+    height: 12.5%;
+    display: flex;
+}
+
+.row div {
+    height: 100%;
+    width: 12.5%;
+}
+
+.lightsquare {
+    background-color: tan;
+}
+
+.darksquare {
+    background-color: black;
+}
+

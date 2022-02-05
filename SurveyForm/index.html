@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="main">
+    <h1 id="title">League of Legends Survey Form</h1>
+    <p id="description">This is a questionaire that will gauge your preferences and feedback about the video game, League of Legends (LoL)</p>
+    <form id="survey-form" action="" method="">
+        
+        <label for="name" id="name-label">Name: <input id="name" type="text" name="name" placeholder="Enter name"required> </label>
+        
+        <label for="email" id="email-label">Email: <input id="email" type="email" name="email" placeholder="Enter email" required> </label>
+        
+        <label for="PIN" id="number-label">PIN: <input id="number" type="tel" name="PIN" pattern="[0-9]{6}" placeholder="Enter 6-digit PIN" required></label>
+        
+        <div class="questions">
+            <p>1. Which is your favorite position in LoL?</p>
+            <select id="dropdown" name="role">
+                <option value="Top" selected>Top</option>
+                <option value="Jungle">Jungle</option>
+                <option value="Mid">Mid</option>
+                <option value="Bot">Bot</option>
+                <option value="Support">Support</option>
+            </select>
+        </div>
+
+        <div class="questions">
+            <p>2. Which is your favorite champion class of all time in LoL?</p>
+            <input type="radio" name="Champion Class" value="controller" id="controller"><label for="controller">Controller</label>
+            <input type="radio" name="Champion Class" value="controler" id="fighter"><label for="fighter">Fighter</label>
+            <input type="radio" name="Champion Class" value="mage" id="mage"><label for="mage">Mage</label>
+            <input type="radio" name="Champion Class" value="slayer" id="slayer"><label for="slayer">Slayer</label>
+            <input type="radio" name="Champion Class" value="marksman" id="marksman"><label for="marksman">Marksman</label>
+            <input type="radio" name="Champion Class" value="tank" id="tank"><label for="tank">Tank</label>
+        </div>
+
+
+        <div class="questions">
+            <p>3. What usually goes on your head when playing LoL? </p>
+            <input type="checkbox" name="priorities" id="farm" value="farm"><label for="farm">Farm minion and monsters</label>
+            <input type="checkbox" name="priorities" id="team-fights-takedowns" value="team-fights-takedowns"><label for="team-fights-takedowns">Team fights and takedowns</label>
+            <input type="checkbox" name="priorities" id="objectives" value="objectives"><label for="objectives">Objectives</label>
+        </div>
+
+        <div class="questions">
+            <label for="feedback">4. What else can we do to make League of Legends a better game?</label><textarea id="feedback" name="feedback" placeholder="Tell us what you think."></textarea>
+        </div>
+
+
+        
+        <input id="submit" type="submit" name="button" value="Send"> 
+    </form>
+</div>    
+
+</body>
+
+</html>
