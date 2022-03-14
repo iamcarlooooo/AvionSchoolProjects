@@ -4,6 +4,9 @@ let board = [
     ["", "", ""]
 ]
 
+
+const boardState = []
+
 var square1 = document.getElementById("square1")
 square1.addEventListener("click", function(el){
     if(turnMove() % 2 === 0){
@@ -14,6 +17,7 @@ square1.addEventListener("click", function(el){
         board[0].splice(0, 1, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -29,6 +33,7 @@ square2.addEventListener("click", function(el){
         board[0].splice(1, 1, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -44,6 +49,7 @@ square3.addEventListener("click", function(el){
         board[0].splice(2, 2, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -59,6 +65,7 @@ square4.addEventListener("click", function(el){
         board[1].splice(0, 1, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -74,6 +81,7 @@ square5.addEventListener("click", function(el){
         board[1].splice(1, 1, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -89,6 +97,7 @@ square6.addEventListener("click", function(el){
         board[1].splice(2, 2, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -104,6 +113,7 @@ square7.addEventListener("click", function(el){
         board[2].splice(0, 1, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -119,6 +129,7 @@ square8.addEventListener("click", function(el){
         board[2].splice(1, 1, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
@@ -134,19 +145,19 @@ square9.addEventListener("click", function(el){
         board[2].splice(2, 2, "O")
     }
     console.log(board)
+    recordBoardState()
     checkRowWin()
     checkColWin()
     checkDiagWin()
 })
 
-let turns = 0;
+
 
 // const turnMove = () => turns++;
-
+let turns = 0;
 function turnMove() {
     return turns++
 }
-
 
 function checkRowWin() {
     board.forEach((row, index) => {
@@ -256,5 +267,45 @@ function resetGame() {
     for (let i=0; i < board.length; i++) {
         board[i].splice(0,3,["","",""])
     }
+    document.getElementById("buttons").style.display = "none"
+    boardState = []
     console.log(board)
+    console.log(boardState)
+}
+
+function recordBoardState() {
+    boardState.push(board.map(row => row.map(cell => cell)))
+    console.log(boardState)
+}
+
+function previousMove() {
+    board = boardState.pop()
+    square1.textContent = boardState[boardState.length - 1][0][0]
+    square2.textContent = boardState[boardState.length - 1][0][1]
+    square3.textContent = boardState[boardState.length - 1][0][2]
+    square4.textContent = boardState[boardState.length - 1][1][0]
+    square5.textContent = boardState[boardState.length - 1][1][1]
+    square6.textContent = boardState[boardState.length - 1][1][2]
+    square7.textContent = boardState[boardState.length - 1][2][0]
+    square8.textContent = boardState[boardState.length - 1][2][1]
+    square9.textContent = boardState[boardState.length - 1][2][2]
+    console.log(boardState)
+    const squares = document.getElementsByClassName("square")
+    for (let i=0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = "aliceblue"
+    }
+}
+
+function nextMove() {
+    board = boardState.push()
+    square1.textContent = boardState[boardState.length - 1][0][0]
+    square2.textContent = boardState[boardState.length - 1][0][1]
+    square3.textContent = boardState[boardState.length - 1][0][2]
+    square4.textContent = boardState[boardState.length - 1][1][0]
+    square5.textContent = boardState[boardState.length - 1][1][1]
+    square6.textContent = boardState[boardState.length - 1][1][2]
+    square7.textContent = boardState[boardState.length - 1][2][0]
+    square8.textContent = boardState[boardState.length - 1][2][1]
+    square9.textContent = boardState[boardState.length - 1][2][2]
+    console.log(boardState)
 }
