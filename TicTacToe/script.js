@@ -5,7 +5,11 @@ let board = [
 ]
 
 
-const boardState = []
+let boardState = [
+    [["", "", ""],
+    ["", "", ""],
+    ["", "", ""]]
+]
 
 var square1 = document.getElementById("square1")
 square1.addEventListener("click", function(el){
@@ -264,11 +268,13 @@ function resetGame() {
         squares[i].textContent = ""
         squares[i].style.backgroundColor = "aliceblue"
     }
-    for (let i=0; i < board.length; i++) {
-        board[i].splice(0,3,["","",""])
-    }
+    boardState = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ]
+    board = boardState
     document.getElementById("buttons").style.display = "none"
-    boardState = []
     console.log(board)
     console.log(boardState)
 }
@@ -279,20 +285,24 @@ function recordBoardState() {
 }
 
 function previousMove() {
-    board = boardState.pop()
-    square1.textContent = boardState[boardState.length - 1][0][0]
-    square2.textContent = boardState[boardState.length - 1][0][1]
-    square3.textContent = boardState[boardState.length - 1][0][2]
-    square4.textContent = boardState[boardState.length - 1][1][0]
-    square5.textContent = boardState[boardState.length - 1][1][1]
-    square6.textContent = boardState[boardState.length - 1][1][2]
-    square7.textContent = boardState[boardState.length - 1][2][0]
-    square8.textContent = boardState[boardState.length - 1][2][1]
-    square9.textContent = boardState[boardState.length - 1][2][2]
-    console.log(boardState)
-    const squares = document.getElementsByClassName("square")
-    for (let i=0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = "aliceblue"
+    if (boardState.length === 1) {
+        document.getElementById("buttons").style.display = "none"
+    } else {
+        board = boardState.pop()
+        square1.textContent = boardState[boardState.length - 1][0][0]
+        square2.textContent = boardState[boardState.length - 1][0][1]
+        square3.textContent = boardState[boardState.length - 1][0][2]
+        square4.textContent = boardState[boardState.length - 1][1][0]
+        square5.textContent = boardState[boardState.length - 1][1][1]
+        square6.textContent = boardState[boardState.length - 1][1][2]
+        square7.textContent = boardState[boardState.length - 1][2][0]
+        square8.textContent = boardState[boardState.length - 1][2][1]
+        square9.textContent = boardState[boardState.length - 1][2][2]
+        const squares = document.getElementsByClassName("square")
+        for (let i=0; i < squares.length; i++) {
+            squares[i].style.backgroundColor = "aliceblue"
+        }
+        console.log(boardState)
     }
 }
 
