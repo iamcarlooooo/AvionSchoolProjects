@@ -268,12 +268,16 @@ function resetGame() {
         squares[i].textContent = ""
         squares[i].style.backgroundColor = "aliceblue"
     }
-    boardState = [
+    boardState = [[ 
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ]]
+    board = [ 
         ["", "", ""],
         ["", "", ""],
         ["", "", ""]
     ]
-    board = boardState
     document.getElementById("buttons").style.display = "none"
     console.log(board)
     console.log(boardState)
